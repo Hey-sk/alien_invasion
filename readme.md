@@ -1,9 +1,10 @@
-# Alien Invasion
-Hop in your rocket ship and get ready to blast away some nasty aliens!
+# 🚀 Welcome aboard, space cadet! 
+You're about to embark on the wildest, most intergalactic adventure of your life with Alien Invasion! Get ready to blast off into the cosmos and unleash your inner space warrior. 🔫
 
-Alien Invasion is a game written in python where you'll control a rocket ship.
-you can move the ship left and right and shoot bullets using the space bar.
-A hoarde of aliens will descend upon you getting faster and faster as you go.
-It's either you or them!
+As you take the helm of your rocket ship, you'll face wave after wave of slimy, sneaky, and downright nasty aliens. But fear not, for you've got the skills, the moves, and the firepower to take them all down! Slide left, slide right, and fire away with your trusty space-bar blaster 🔥 to clear the way for humanity's survival.
 
-Do your best! I believe in you.
+But beware, the aliens are cunning and won't go down without a fight! They'll come at you with everything they've got, from fiery lasers 🔴 to giant tentacles 🐙, and it's up to you to dodge, weave, and blast your way to victory!
+
+So, do you have what it takes to be the ultimate space hero? Step up and show those alien scum who's boss in Alien Invasion! 👊👽
+
+Alien Invasion is written in python based on the tutorial from Python Crash Course by Eric Matthes
