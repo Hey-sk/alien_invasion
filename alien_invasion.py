@@ -72,6 +72,7 @@ class AlienInvasion:
 
             #reset game stats
             self.stats.reset_stats()
+            self.sb.prep_score()
             self.game_active = True
 
             #get rid of any remaining bullets and aliens
@@ -81,6 +82,9 @@ class AlienInvasion:
             #create new fleet and center ship.
             self._create_fleet()
             self.ship.center_ship()
+
+            self.sb.prep_level()
+            self.sb.prep_ships()
 
     def _check_keydown_events(self, event):
         if event.key == pygame.K_RIGHT:
@@ -120,11 +124,20 @@ class AlienInvasion:
         #check for any bullets that collide with aliens
         #if so. get rid of the bullet and the alien.
         collisions = pygame.sprite.groupcollide(self.bullets, self.aliens, True, True)
+        if collisions:
+            for aliens in collisions.values():
+                self.stats.score += self.settings.alien_points * len(aliens)
+            self.sb.prep_score()
+            self.sb.check_high_score()
         
         if not self.aliens:
             self.bullets.empty()
             self._create_fleet()
             self.settings.increase_speed()
+
+            #increase level
+            self.stats.level += 1
+            self.sb.prep_level()
 
     def _update_aliens(self):
         """update alien movement"""
@@ -143,6 +156,7 @@ class AlienInvasion:
         if self.stats.ships_left > 0:
             #decrement ships left.
             self.stats.ships_left -= 1
+            print(self.stats.ships_left)
 
             #get rid of aliens and bullets.
             self.bullets.empty()
@@ -151,6 +165,8 @@ class AlienInvasion:
             #create a new fleet and center the ship.
             self._create_fleet()
             self.ship.center_ship()
+
+            self.sb.prep_ships()
 
             #pause
             sleep(0.5)
